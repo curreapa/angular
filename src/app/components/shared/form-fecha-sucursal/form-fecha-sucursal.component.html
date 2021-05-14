@@ -1,0 +1,19 @@
+<div class="body">
+    <form class="form-group" [formGroup]="sucursalForm">
+            <div class="mb-3 input-group">
+
+                <label cass="form-label" >Sucursal</label>
+                <select class="form-select form-control" id="inputSucursal" formControlName="selectSucursal">
+                  <option [ngValue]="null" disabled>Selecciona Sucursal</option>
+                  <option *ngFor="let sucursal of sucursales; let i = index"  [value]="sucursal.idSucursal">{{sucursal.descripcion}}</option>
+                </select>       
+                <label class="form-label">Desde</label>
+                <input type="date" formControlName="fechaDesde" class="form-control" >
+                <label class="form-label">Hasta</label>
+                <input type="date" formControlName="fechaHasta" class="form-control" >
+          
+              <button type="submit" class="btn btn-primary" (click)="buscar()">Buscar</button>
+            </div>
+      </form>
+
+</div>

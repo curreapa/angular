@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-7">
+     <app-form-fecha-sucursal [vista]="'concursos'" (enviarConcursos)="obtenerConcursos($event)" (enviarVentas)="obtenerVentas($event)">
+     </app-form-fecha-sucursal>
+    </div>
+    <div class="col-4">
+        <button (click)="exportarExcel()" class="btn btn-success">Exportar</button>
+    </div>
+ </div>
+<div class="row ">
+    <div class="col-6 mb-5" *ngFor="let concurso of concursos; index as i">
+        <app-tabla-concurso [data]="concurso"></app-tabla-concurso>
+    </div>
+</div>
+ 
+<div class="row">
+    <div class="col-12" *ngIf="ventas.length > 0">
+        <app-tabla-ventas-colaborador [data]="ventas"></app-tabla-ventas-colaborador>
+
+    </div>
+</div>

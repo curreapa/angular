@@ -1,0 +1,35 @@
+<div>
+    <p align="center" class="h4">Ventas Por Colaborador</p>
+</div>
+<table class="table">
+    <thead id="thead" class="bg-dark">
+      <tr>
+        <th scope="col">Vendedor</th>
+        <th scope="col">Ventas</th>
+        <th scope="col">Monto Bruto </th>
+        <th scope="col">Contribucion Des Inc</th>
+        <th scope="col">Margen Des Inc</th>
+        <th scope="col">Productos Vendidos</th>
+        <th scope="col">Unidades Totales Vendidas</th>
+        <th scope="col">Unidades Con Incentivo</th>
+        <th scope="col">Efectividad</th>
+        <th scope="col">Promedio Unidad/Venta</th>
+        <th scope="col">Monto Venta Promedio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of ventas">
+        <td>{{venta.nombreVendedor}}</td>
+        <td>{{venta.numeroVentas}}</td>
+        <td>{{venta.montoBrutoVentas}}</td>
+        <td>{{venta.contribucionVentasDescontandoInc}}</td>
+        <td>{{formatearDecimal(venta.margenVentasDescontandoInc, 4)}}</td>
+        <td>{{venta.numeroProductos}}</td>
+        <td>{{venta.unidadesTotalesVendidas}}</td>
+        <td>{{venta.productosIncentivos}}</td>
+        <td>{{formatearDecimal(venta.efectividad, 2)}}</td>
+        <td>{{formatearDecimal(venta.promedioUnidadVenta, 2)}}</td>
+        <td>{{redondearValor(venta.montoVentaPromedio)}}</td>
+      </tr>
+    </tbody>
+  </table>

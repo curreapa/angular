@@ -1,0 +1,25 @@
+<div>
+    <p align="center" class="h4">{{title}}</p>
+</div>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <table class="table">
+    <thead id="thead" class="{{theme}}">
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Logro Unit</th>
+        <th scope="col">Meta Unit</th>
+        <th scope="col">Logro %</th>
+        <th scope="col">Falta %</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of resultados">
+        <td>{{r.grupo}}</td>
+        <td>{{r.logroUnit}}</td>
+        <td>{{r.metaUnit}}</td>
+        <td>{{formatearDecimal(r.logroPorc)}}%</td>
+        <td class="{{theme}}">{{formatearDecimal(r.faltaPorc)}}%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
