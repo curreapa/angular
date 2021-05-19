@@ -59,7 +59,7 @@ export class ConcursoComponent implements OnInit {
   }
 
   exportarExcel(){
-    this.excelService.generateExcelConcurso(this.concursos, "Concursos","Sucusal");
+    this.excelService.generateExcelConcurso(this.concursos, this.ventas,"Concursos","Sucusal");
   }
 
 }
