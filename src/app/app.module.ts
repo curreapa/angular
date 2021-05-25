@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule} from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 //RUTAS
@@ -20,6 +21,9 @@ import { EnvioAjustesComponent } from './components/envio-ajustes/envio-ajustes.
 import { TablaConcursoComponent } from './components/concurso/tabla-concurso/tabla-concurso.component';
 import { TablaVentasColaboradorComponent } from './components/concurso/tabla-ventas-colaborador/tabla-ventas-colaborador.component';
 import { FormFechaSucursalComponent } from './components/shared/form-fecha-sucursal/form-fecha-sucursal.component';
+import { TablaAjustesComponent } from './components/envio-ajustes/tabla-ajustes/tabla-ajustes.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,8 @@ import { FormFechaSucursalComponent } from './components/shared/form-fecha-sucur
     EnvioAjustesComponent,
     TablaConcursoComponent,
     TablaVentasColaboradorComponent,
-    FormFechaSucursalComponent
+    FormFechaSucursalComponent,
+    TablaAjustesComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,7 @@ import { FormFechaSucursalComponent } from './components/shared/form-fecha-sucur
   exports:[
     FormFechaSucursalComponent
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

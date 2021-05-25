@@ -1,0 +1,48 @@
+
+<div class="col-6">
+  <table class="table">
+    <thead id="thead" >
+      <tr>
+        <th scope="col" colspan="2">{{data.tipo}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th scope="row">Unidades</th>   
+        <td>{{data.unidades}}</td>   
+      </tr>
+      <tr >
+        <th scope="row">Valorizado Neto</th>   
+        <td>{{data.valorizadoNeto}}</td>   
+      </tr>
+      <tr >
+        <th scope="row">Prom. Unitario</th>    
+        <td>{{data.promUnitario}}</td>  
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="table-wrapper-scroll-y my-custom-scrollbar mb-5">
+    <table class="table">
+      <thead id="thead" >
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Total</th>
+          <th scope="col">Obs.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of data.detalle">
+            <td>{{detalle.fecha | date:'dd/MM/yyyy'}}</td>   
+            <td>{{detalle.producto}}</td>   
+            <td>{{detalle.cantidad}}</td>   
+            <td>{{detalle.costoUnitario}}</td>   
+            <td>{{detalle.total}}</td>   
+            <td>{{detalle.obs}}</td>   
+        </tr>
+      </tbody>
+    </table>
+  </div>

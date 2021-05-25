@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ConcursoDTO } from 'src/app/models/concursos/ConcursoDTO';
-import { ResultadoConcursoDTO } from 'src/app/models/concursos/ResultadoConcursoDTO';
 import { VentasColaborador } from 'src/app/models/ventas/ventasColaborador';
 import { ExcelConcursosService } from 'src/app/services/exportables/excel-concursos.service';
 

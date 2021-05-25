@@ -28,4 +28,12 @@ export class ConcursosService {
     return this.http.post(this.url+'ventas/porvendedor', formData)
   }
 
+  getAjustesTraslados(data:any){
+    let formData: FormData = new FormData();
+    formData.append('idSucursal', data.idSucursal);
+    formData.append('dateIn', data.dateIn);
+    formData.append('dateOut', data.dateOut);
+    return this.http.post(this.url+'abastecimiento/traslados', formData)
+  }
+
 }

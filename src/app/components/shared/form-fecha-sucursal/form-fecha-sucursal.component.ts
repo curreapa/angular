@@ -13,6 +13,7 @@ export class FormFechaSucursalComponent implements OnInit {
 
   @Output() enviarConcursos = new EventEmitter<any>();
   @Output() enviarVentas = new EventEmitter<any>();
+  @Output() enviarAjustes = new EventEmitter<any>();
   @Input() vista: string = " ";
 
   sucursales: Sucursal[] = []
@@ -53,7 +54,12 @@ export class FormFechaSucursalComponent implements OnInit {
           this.enviarVentas.emit(data.listaResponse)
         })
         break;
-    
+      case "ajustes":
+        this.concursoService.getAjustesTraslados(data).subscribe((data: any)=>{
+          this.enviarAjustes.emit(data.listaResponse)
+          console.log(data)
+        })
+        break;
       default:
         break;
     }
